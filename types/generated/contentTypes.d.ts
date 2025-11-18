@@ -528,6 +528,38 @@ export interface ApiPaginaHqPaginaHq extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiPerguntaRespostaPerguntaResposta
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'pergunta_respostas';
+  info: {
+    displayName: 'pergunta_resposta';
+    pluralName: 'pergunta-respostas';
+    singularName: 'pergunta-resposta';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    ativo: Schema.Attribute.Boolean;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::pergunta-resposta.pergunta-resposta'
+    > &
+      Schema.Attribute.Private;
+    ordem: Schema.Attribute.Integer;
+    pergunta: Schema.Attribute.Text & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    resposta: Schema.Attribute.Blocks;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPersonagemPersonagem extends Struct.CollectionTypeSchema {
   collectionName: 'personagems';
   info: {
@@ -1103,6 +1135,7 @@ declare module '@strapi/strapi' {
       'api::galeria.galeria': ApiGaleriaGaleria;
       'api::noticia.noticia': ApiNoticiaNoticia;
       'api::pagina-hq.pagina-hq': ApiPaginaHqPaginaHq;
+      'api::pergunta-resposta.pergunta-resposta': ApiPerguntaRespostaPerguntaResposta;
       'api::personagem.personagem': ApiPersonagemPersonagem;
       'api::visitante.visitante': ApiVisitanteVisitante;
       'plugin::content-releases.release': PluginContentReleasesRelease;

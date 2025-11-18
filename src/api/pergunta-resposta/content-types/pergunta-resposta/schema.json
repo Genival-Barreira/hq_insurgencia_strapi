@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pergunta_respostas",
+  "info": {
+    "singularName": "pergunta-resposta",
+    "pluralName": "pergunta-respostas",
+    "displayName": "pergunta_resposta"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "pergunta": {
+      "type": "text",
+      "required": true
+    },
+    "resposta": {
+      "type": "blocks"
+    },
+    "ordem": {
+      "type": "integer"
+    },
+    "ativo": {
+      "type": "boolean"
+    }
+  }
+}

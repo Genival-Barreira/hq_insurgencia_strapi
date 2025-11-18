@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pagina_hqs",
+  "info": {
+    "singularName": "pagina-hq",
+    "pluralName": "pagina-hqs",
+    "displayName": "pagina_hq"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "capitulo": {
+      "type": "integer"
+    },
+    "numero_pagina": {
+      "type": "integer"
+    },
+    "imagem": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "descricao": {
+      "type": "text"
+    },
+    "ativo": {
+      "type": "boolean"
+    }
+  }
+}

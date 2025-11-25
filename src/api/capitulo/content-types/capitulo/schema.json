@@ -1,0 +1,66 @@
+{
+  "kind": "collectionType",
+  "collectionName": "capitulos",
+  "info": {
+    "singularName": "capitulo",
+    "pluralName": "capitulos",
+    "displayName": "capitulo"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titulo": {
+      "type": "string"
+    },
+    "numero_capitulo": {
+      "type": "integer"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "titulo"
+    },
+    "sinopse": {
+      "type": "text"
+    },
+    "descricao_longa": {
+      "type": "blocks"
+    },
+    "capa": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "paginas_previa": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "quantidade_paginas": {
+      "type": "integer"
+    },
+    "preco": {
+      "type": "decimal"
+    },
+    "disponivel": {
+      "type": "boolean"
+    },
+    "ordem": {
+      "type": "integer"
+    },
+    "destaque": {
+      "type": "boolean"
+    }
+  }
+}

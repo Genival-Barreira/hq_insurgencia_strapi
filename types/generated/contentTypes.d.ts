@@ -430,6 +430,82 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiCapituloCapitulo extends Struct.CollectionTypeSchema {
+  collectionName: 'capitulos';
+  info: {
+    displayName: 'capitulo';
+    pluralName: 'capitulos';
+    singularName: 'capitulo';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    capa: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    descricao_longa: Schema.Attribute.Blocks;
+    destaque: Schema.Attribute.Boolean;
+    disponivel: Schema.Attribute.Boolean;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::capitulo.capitulo'
+    > &
+      Schema.Attribute.Private;
+    numero_capitulo: Schema.Attribute.Integer;
+    ordem: Schema.Attribute.Integer;
+    paginas_previa: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    preco: Schema.Attribute.Decimal;
+    publishedAt: Schema.Attribute.DateTime;
+    quantidade_paginas: Schema.Attribute.Integer;
+    sinopse: Schema.Attribute.Text;
+    slug: Schema.Attribute.UID<'titulo'>;
+    titulo: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiContatoContato extends Struct.CollectionTypeSchema {
+  collectionName: 'contatoes';
+  info: {
+    displayName: 'contato';
+    pluralName: 'contatoes';
+    singularName: 'contato';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    descricao: Schema.Attribute.Text;
+    email: Schema.Attribute.Email;
+    instagram: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::contato.contato'
+    > &
+      Schema.Attribute.Private;
+    nome: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    telefone: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    vendedor: Schema.Attribute.Boolean;
+    whatsapp: Schema.Attribute.Text;
+  };
+}
+
 export interface ApiGaleriaGaleria extends Struct.CollectionTypeSchema {
   collectionName: 'galerias';
   info: {
@@ -453,9 +529,10 @@ export interface ApiGaleriaGaleria extends Struct.CollectionTypeSchema {
       'api::galeria.galeria'
     > &
       Schema.Attribute.Private;
+    nome_artista: Schema.Attribute.String;
+    nome_imagem: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.UID<'titulo'>;
-    titulo: Schema.Attribute.String;
+    slug: Schema.Attribute.UID;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -490,38 +567,6 @@ export interface ApiNoticiaNoticia extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'titulo'>;
     titulo: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiPaginaHqPaginaHq extends Struct.CollectionTypeSchema {
-  collectionName: 'pagina_hqs';
-  info: {
-    displayName: 'pagina_hq';
-    pluralName: 'pagina-hqs';
-    singularName: 'pagina-hq';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    ativo: Schema.Attribute.Boolean;
-    capitulo: Schema.Attribute.Integer;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    descricao: Schema.Attribute.Text;
-    imagem: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::pagina-hq.pagina-hq'
-    > &
-      Schema.Attribute.Private;
-    numero_pagina: Schema.Attribute.Integer;
-    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -576,6 +621,7 @@ export interface ApiPersonagemPersonagem extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     descricao: Schema.Attribute.Text;
+    destaque: Schema.Attribute.Boolean;
     historia: Schema.Attribute.Blocks;
     imagem: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -587,6 +633,88 @@ export interface ApiPersonagemPersonagem extends Struct.CollectionTypeSchema {
     nome: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'nome'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSobreSobre extends Struct.CollectionTypeSchema {
+  collectionName: 'sobres';
+  info: {
+    displayName: 'sobre';
+    pluralName: 'sobres';
+    singularName: 'sobre';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    conteudo: Schema.Attribute.Blocks;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::sobre.sobre'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiUniversoUniverso extends Struct.CollectionTypeSchema {
+  collectionName: 'universos';
+  info: {
+    displayName: 'universo';
+    pluralName: 'universos';
+    singularName: 'universo';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    conteudo: Schema.Attribute.Blocks;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    descricao: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::universo.universo'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    titulo: Schema.Attribute.Text;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiVendaVenda extends Struct.CollectionTypeSchema {
+  collectionName: 'vendas';
+  info: {
+    displayName: 'venda';
+    pluralName: 'vendas';
+    singularName: 'venda';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    descricao: Schema.Attribute.Text;
+    destaque: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::venda.venda'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    titulo: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1132,11 +1260,15 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::capitulo.capitulo': ApiCapituloCapitulo;
+      'api::contato.contato': ApiContatoContato;
       'api::galeria.galeria': ApiGaleriaGaleria;
       'api::noticia.noticia': ApiNoticiaNoticia;
-      'api::pagina-hq.pagina-hq': ApiPaginaHqPaginaHq;
       'api::pergunta-resposta.pergunta-resposta': ApiPerguntaRespostaPerguntaResposta;
       'api::personagem.personagem': ApiPersonagemPersonagem;
+      'api::sobre.sobre': ApiSobreSobre;
+      'api::universo.universo': ApiUniversoUniverso;
+      'api::venda.venda': ApiVendaVenda;
       'api::visitante.visitante': ApiVisitanteVisitante;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

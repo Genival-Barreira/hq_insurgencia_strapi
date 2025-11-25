@@ -11,18 +11,11 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "titulo": {
+    "nome_artista": {
       "type": "string"
     },
-    "slug": {
-      "type": "uid",
-      "targetField": "titulo"
-    },
-    "data_publicacao": {
-      "type": "date"
-    },
-    "descricao": {
-      "type": "text"
+    "nome_imagem": {
+      "type": "string"
     },
     "imagem": {
       "type": "media",
@@ -33,6 +26,15 @@
         "videos",
         "audios"
       ]
+    },
+    "slug": {
+      "type": "uid"
+    },
+    "data_publicacao": {
+      "type": "date"
+    },
+    "descricao": {
+      "type": "text"
     }
   }
 }

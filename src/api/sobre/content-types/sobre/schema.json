@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sobres",
+  "info": {
+    "singularName": "sobre",
+    "pluralName": "sobres",
+    "displayName": "sobre"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "conteudo": {
+      "type": "blocks"
+    }
+  }
+}

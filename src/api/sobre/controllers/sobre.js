@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * pagina-hq controller
+ * sobre controller
  */
 
 const { createCoreController } = require('@strapi/strapi').factories;
 
-module.exports = createCoreController('api::pagina-hq.pagina-hq');
+module.exports = createCoreController('api::sobre.sobre');

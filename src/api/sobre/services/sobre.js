@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * pagina-hq service
+ * sobre service
  */
 
 const { createCoreService } = require('@strapi/strapi').factories;
 
-module.exports = createCoreService('api::pagina-hq.pagina-hq');
+module.exports = createCoreService('api::sobre.sobre');

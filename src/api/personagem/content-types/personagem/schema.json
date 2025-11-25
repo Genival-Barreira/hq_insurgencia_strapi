@@ -36,6 +36,9 @@
     },
     "ativo": {
       "type": "boolean"
+    },
+    "destaque": {
+      "type": "boolean"
     }
   }
 }

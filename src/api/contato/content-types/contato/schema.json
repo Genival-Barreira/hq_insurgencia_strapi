@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "contatoes",
+  "info": {
+    "singularName": "contato",
+    "pluralName": "contatoes",
+    "displayName": "contato"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string"
+    },
+    "descricao": {
+      "type": "text"
+    },
+    "email": {
+      "type": "email"
+    },
+    "telefone": {
+      "type": "string"
+    },
+    "instagram": {
+      "type": "text"
+    },
+    "whatsapp": {
+      "type": "text"
+    },
+    "vendedor": {
+      "type": "boolean"
+    }
+  }
+}

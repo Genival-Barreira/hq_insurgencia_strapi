@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * pagina-hq router
+ * venda router
  */
 
 const { createCoreRouter } = require('@strapi/strapi').factories;
 
-module.exports = createCoreRouter('api::pagina-hq.pagina-hq');
+module.exports = createCoreRouter('api::venda.venda');

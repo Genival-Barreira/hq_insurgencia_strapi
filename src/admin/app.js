@@ -145,7 +145,7 @@ export default {
                 'Content Manager': 'Gerenciador de conteúdo',
                 'Content Type Builder': 'Criador de Tipos de Conteúdo',
                 'Files Upload': 'Enviar arquivos',
-                'HomePage.head.title': 'Pagina inicial',
+                'HomePage.head.title': 'Admin Insurgência',
                 'HomePage.roadmap': 'Veja nosso roadmap',
                 'HomePage.welcome.congrats': 'Parabéns!',
                 'HomePage.welcome.congrats.content': 'Você está logado como o primeiro administrador. Para descobrir os recursos avançados fornecidos pelo Strapi,',
@@ -821,6 +821,6 @@ export default {
         },
     },
     bootstrap(app) {
-        console.log(app);
+        document.title = "Admin Insurgência";
     },
 };

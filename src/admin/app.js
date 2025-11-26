@@ -785,7 +785,7 @@ export default {
                 },
             },
             // Tema Escuro (Dark Mode)
-            dark: {F
+            dark: {
                 colors: {
                     // Cor Principal no modo escuro
                     primary100: '#1d0f0b', // Brand Black

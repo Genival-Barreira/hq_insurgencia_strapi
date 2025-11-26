@@ -1,10 +1,19 @@
+import favicon from './extensions/favicon.ico';
+
 export default {
     config: {
         // Substitua estas URLs pelas suas imagens se quiser mudar o logo
 
         // Configuração de Traduções (Opcional)
         locales: ['pt-BR', 'en'],
-
+        auth: {
+            logo: favicon,
+        },
+        menu: {
+            logo: favicon
+        },
+        tutorials: false,
+        notifications: {releases: false},
         translations: {
             'pt-BR': {
                 // 1. Personalização da Marca (O que já tínhamos)
@@ -760,7 +769,9 @@ export default {
 
             }
         },
-        // AQUI MUDAMOS AS CORES
+        head: {
+            favicon: favicon,
+        },
         theme: {
             // Tema Claro (Light)
             light: {

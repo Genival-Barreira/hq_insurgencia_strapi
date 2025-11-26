@@ -624,6 +624,7 @@ export interface ApiPersonagemPersonagem extends Struct.CollectionTypeSchema {
     destaque: Schema.Attribute.Boolean;
     historia: Schema.Attribute.Blocks;
     imagem: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    imagem_principal: Schema.Attribute.Media<'images' | 'files'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',

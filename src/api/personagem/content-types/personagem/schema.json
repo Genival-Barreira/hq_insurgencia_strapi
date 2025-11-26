@@ -39,6 +39,14 @@
     },
     "destaque": {
       "type": "boolean"
+    },
+    "imagem_principal": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
     }
   }
 }
